@@ -1,0 +1,59 @@
+
+/* Reset de padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b4aeae;
+}
+
+/* Container principal */
+#container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+    color:#28a745;
+    padding: 20px;
+
+}
+input{
+    padding: 8px 80px;
+}
+
+/* Estilo da lista de tarefas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo do botão adicionar */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    background-color: #218838;
+}
+
+/* Estilo ao focar no botão */
+button:focus {
+    outline: none;
+}
