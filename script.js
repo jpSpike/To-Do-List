@@ -8,9 +8,9 @@ const taskList = document.getElementById("taskList");
 function addTask() {
 
     //Obtém o valor digitado pelo usuário
-    const taskText = taskInput.value;
+    const taskText = taskInput.value.trim();
 
-    // Verifica se o campo está vazio
+    //Verifica se o campo está vazio
     if (taskText === "") {
         alert("Por favor, insira uma tarefa!");
         return;
@@ -19,18 +19,42 @@ function addTask() {
     //Criar um novo elemento de lista
     const li = document.createElement("li");
 
-    // Adiciona o texto da tarefa ao elemento
-    li.textContent = taskText;
+    //Cria o elemento que receberá o texto da tarefa
+    const taskName = document.createElement("span");
 
+    //adiciona o texto digitado ao elemento
+    taskName.textContent = taskText;
 
-    //Criar um botão de remoção
+    // Cria o checkbox de convlusão
+    const checkbox = document.createElement("input");
+
+    //definir o tipo do input como checkbox
+    checkbox.type = "checkbox";
+
+    //botão de remoção 
     const removeButton = document.createElement("button");
 
-    // Define o texto do botão
-    removeButton.textContent = "Remover";
+    //Adiciona o símbolo de caveira
+    removeButton.textContent = "☠";
 
+    //implementar conclusão de tarefa
+    checkbox.onchange = function() {
 
-    // Implementar a ação de remoção
+        if (checkbox.checked) {
+
+            taskName.style.textDecoration = "line-through";
+            taskName.style.opacity = "0.5";
+
+        } else {
+
+            taskName.style.textDecoration = "none";
+            taskName.style.opacity = "1";
+
+        }
+
+    };
+    
+    //Implementar a ação de remoção
     removeButton.onclick = function() {
 
         // Remove a tarefa da lista
@@ -40,6 +64,8 @@ function addTask() {
 
 
     // Anexar os elementos à lista de tarefas
+    li.appendChild(taskName);
+    li.appendChild(checkbox);
     li.appendChild(removeButton);
 
     taskList.appendChild(li);
