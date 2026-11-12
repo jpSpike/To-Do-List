@@ -8,18 +8,27 @@
 </head>
 <body>
     <div id="container">
-        <h1>Minha Lista de Tarefas</h1>
-        <input type="text" id="taskInput" placeholder="O que vamos fazer hoje?">
-        <button onclick="addTask( )">Adicionar</button>
-        <ul id="taskList"></ul>
-    </div>
-    <div id="TaskHeader">
+        <h1>MY TASK LIST</h1>
+        <h2 id="status"> SYSTEM READY</h2>
+
+        <div id="taskForm"> 
+            <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="O que vamos fazer hoje?">
+
+            <button onclick="addTask( )">Adicionar</button>
+        </div>
+        <div id="taskHeader">
         <h2>Task</h2>
         <h2>Complete</h2>
         <h2>.POP</h2>
     </div>
 
     <ul id="taskList"></ul>
+    </div>
+    
+    
     <script src="script.js"></script>
     
 </body>
