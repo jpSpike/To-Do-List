@@ -10,6 +10,8 @@ function addTask() {
     //Obtém o valor digitado pelo usuário
     const taskText = taskInput.value.trim();
 
+ 
+
     //Verifica se o campo está vazio
     if (taskText === "") {
         alert("Por favor, insira uma tarefa!");
@@ -75,3 +77,12 @@ function addTask() {
     taskInput.value = "";
 
 }
+
+   // Permitir adicionar tarefas pressionando Enter
+taskInput.addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            addTask();
+        }
+
+});
